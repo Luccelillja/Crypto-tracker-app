@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid #2f2f2f;
+  padding: 1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  color: white;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card img {
+  width: 32px;
+  height: 32px;
+}
+
+.green {
+  color: #00ffab;
+}
+
+.red {
+  color: #ff4d4d;
+}
+
+button {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+button:hover {
+  color: #fff;
+}
