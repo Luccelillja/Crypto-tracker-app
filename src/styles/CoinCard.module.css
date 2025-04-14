@@ -1,53 +1,124 @@
 .card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  width: 240px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  background: rgba(20, 20, 20, 0.6);
-  border: 1px solid #2f2f2f;
-  padding: 1rem;
-  border-radius: 12px;
+  gap: 0.75rem;
   backdrop-filter: blur(10px);
-  color: white;
-  margin-bottom: 1rem;
-  gap: 1rem;
-  transition: transform 0.2s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, border 0.3s ease;
+  position: relative;
 }
 
 .card:hover {
-  transform: scale(1.01);
+  transform: scale(1.02);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.1);
 }
 
-.card img {
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon {
   width: 32px;
   height: 32px;
+  border-radius: 50%;
+  transition: box-shadow 0.3s ease;
 }
 
-.green {
-  color: #00ffab;
+.card:hover .icon {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
-.red {
-  color: #ff4d4d;
-}
-
-button {
-  background: none;
-  border: none;
-  color: #888;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-button:hover {
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
   color: #fff;
 }
 
-.info {
+p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #ccc;
+}
+
+.price {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.sparkline {
+  margin-top: 0.25rem;
+  align-self: flex-start;
+  overflow: hidden;
+}
+
+.remove {
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.remove:hover {
+  color: #f44;
+}
+.link {
   text-decoration: none;
   color: inherit;
-  gap: 1rem;
-  flex-grow: 1;
+  display: inline-block;
+}
+
+.positive {
+  color: #0f0;
+}
+
+.negative {
+  color: #f44;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-left: 4px;
+}
+
+.chartArea {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.chartLabel {
+  font-size: 0.75rem;
+  color: #888;
+  text-align: center;
+  margin-top: 0.25rem;
 }

@@ -1,27 +1,69 @@
-.container {
+/* .page {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  max-width: 600px;
-  margin: 0 auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+} */
+.page {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.empty {
-  color: #888;
+.hero {
   text-align: center;
-  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero img {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 8px #0ff);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: #999;
+  letter-spacing: 0.5px;
 }
 
 .message {
-  color: #ff9900;
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  color: #ffcc00;
   font-style: italic;
-  animation: fadein 0.3s ease;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
 }
 
-@keyframes fadein {
+.coins {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.empty {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(-4px);

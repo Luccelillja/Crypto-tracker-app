@@ -1,50 +1,95 @@
 .searchbar {
-  position: relative;
   width: 100%;
-  max-width: 600px;
-  margin: 2rem auto;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
-input {
+.searchbar input {
   width: 100%;
-  padding: 0.8rem 1rem;
-  border-radius: 12px;
-  border: 1px solid #333;
-  background-color: #1c1c1c;
-  color: white;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #fff;
   outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchbar input:focus {
+  border-color: #0ff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .results {
   position: absolute;
+  top: 100%;
+  left: 0;
   width: 100%;
-  background-color: #1c1c1c;
-  border: 1px solid #333;
-  border-radius: 0 0 12px 12px;
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-top: 0.5rem;
   list-style: none;
   padding: 0;
-  z-index: 10;
-  max-height: 200px;
+  max-height: 300px;
   overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  z-index: 20;
 }
 
 .results li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: flex-start;
+  gap: 0.75rem;
   padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #fff;
   cursor: pointer;
-  color: white;
   transition: background 0.2s ease;
+  line-height: 1.2;
+  text-align: left;
 }
 
 .results li:hover {
-  background-color: #2a2a2a;
+  background: rgba(0, 255, 255, 0.07);
 }
 
-.results img {
-  width: 20px;
-  height: 20px;
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+  margin-top: 1px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.name {
+  font-weight: 600;
+  color: #fff;
+}
+
+.symbol {
+  color: #888;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: #aaa;
 }

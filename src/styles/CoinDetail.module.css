@@ -1,10 +1,51 @@
+/* ======================
+   Layout + Containers
+====================== */
+
+.page {
+  position: relative;
+  padding: 2rem;
+}
+
 .detail {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
+  padding-top: 3rem;
   text-align: center;
-  padding: 2rem 1rem;
 }
+
+/* ======================
+   Back Button
+====================== */
+
+.backLink {
+  /* position: absolute; */
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  color: #0ff;
+  text-decoration: none;
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #0ff;
+  transition: box-shadow 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.backLink:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  transform: scale(1.03);
+}
+
+/* ======================
+   Coin Info
+====================== */
 
 img {
   width: 64px;
@@ -14,5 +55,54 @@ img {
 .loading {
   text-align: center;
   margin-top: 4rem;
+  color: #aaa;
+}
+
+/* ======================
+   Chart Styling
+====================== */
+
+.chartWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.tv-chart-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 700px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #222;
+  backdrop-filter: blur(10px);
+}
+
+/* ======================
+   Watchlist Actions
+====================== */
+
+.watchButton {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 12px;
+  background: linear-gradient(to right, #00f0ff, #007cf0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.watchButton:hover {
+  transform: scale(1.03);
+}
+
+.inWatchlist {
+  margin-top: 1rem;
+  font-style: italic;
   color: #aaa;
 }
