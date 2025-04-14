@@ -1,0 +1,50 @@
+.searchbar {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  background-color: #1c1c1c;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.results {
+  position: absolute;
+  width: 100%;
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 0 0 12px 12px;
+  margin-top: 0.5rem;
+  list-style: none;
+  padding: 0;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.results li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.results li:hover {
+  background-color: #2a2a2a;
+}
+
+.results img {
+  width: 20px;
+  height: 20px;
+}

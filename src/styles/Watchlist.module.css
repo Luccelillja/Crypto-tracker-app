@@ -11,3 +11,23 @@
   text-align: center;
   font-style: italic;
 }
+
+.message {
+  color: #ff9900;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  animation: fadein 0.3s ease;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
