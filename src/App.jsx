@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import Watchlist from "./components/Watchlist";
 import CoinDetail from "./pages/CoinDetail";
+import "./App.css";
 
 function App() {
   return (
-    <main style={{ maxWidth: "600px", margin: "0 auto", padding: "2rem 1rem" }}>
+    <main className="main">
       <Routes>
         <Route path="/" element={<Watchlist />} />
         <Route path="/coin/:id" element={<CoinDetail />} />
