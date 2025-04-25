@@ -103,6 +103,7 @@ body {
   color: #fff;
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
+  overscroll-behavior: none;
 }
 
 /* Root container */
