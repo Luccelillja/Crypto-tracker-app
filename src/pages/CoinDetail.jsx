@@ -27,14 +27,12 @@ function CoinDetail() {
     fetchCoinDetail(id).then(setCoin);
   }, [id]);
 
-  // Fetch coin details
   useEffect(() => {
     fetch(`https://api.coingecko.com/api/v3/coins/${id}`)
       .then((res) => res.json())
       .then(setCoin);
   }, [id]);
 
-  // Handle responsive chart sizing
   useEffect(() => {
     const updateChartSize = () => {
       if (window.innerWidth < 768) {
@@ -46,7 +44,7 @@ function CoinDetail() {
       }
     };
 
-    updateChartSize(); // Initial run
+    updateChartSize();
     window.addEventListener("resize", updateChartSize);
     return () => window.removeEventListener("resize", updateChartSize);
   }, []);

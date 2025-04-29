@@ -1,7 +1,3 @@
-/* ======================
-   Layout + Containers
-====================== */
-
 .page {
   position: relative;
   padding: 2rem;
@@ -15,10 +11,6 @@
   padding-top: 3rem;
   text-align: center;
 }
-
-/* ======================
-   Back Button
-====================== */
 
 .backLink {
   /* position: absolute; */
@@ -43,10 +35,6 @@
   transform: scale(1.03);
 }
 
-/* ======================
-   Coin Info
-====================== */
-
 img {
   width: 64px;
   margin: 0 auto;
@@ -57,10 +45,6 @@ img {
   margin-top: 4rem;
   color: #aaa;
 }
-
-/* ======================
-   Chart Styling
-====================== */
 
 .chartWrapper {
   display: flex;
@@ -79,10 +63,6 @@ img {
   border: 1px solid #222;
   backdrop-filter: blur(10px);
 }
-
-/* ======================
-   Watchlist Actions
-====================== */
 
 .watchButton {
   margin-top: 1rem;

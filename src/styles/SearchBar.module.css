@@ -1,7 +1,7 @@
 .searchbar {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 420px;
+  margin: 1.5rem auto;
   position: relative;
   z-index: 10;
 }
@@ -10,12 +10,12 @@
   width: 100%;
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
-  color: #fff;
+  color: var(--text);
   outline: none;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .searchbar input:focus {
@@ -28,68 +28,55 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: rgba(20, 20, 20, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   margin-top: 0.5rem;
   list-style: none;
   padding: 0;
   max-height: 300px;
   overflow-y: auto;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
-  z-index: 20;
 }
 
 .results li {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
   font-size: 0.95rem;
-  color: #fff;
+  color: var(--text);
   cursor: pointer;
   transition: background 0.2s ease;
   line-height: 1.2;
-  text-align: left;
 }
 
 .results li:hover {
-  background: rgba(0, 255, 255, 0.07);
+  background: rgba(0, 255, 255, 0.08);
 }
 
-.icon {
-  width: 32px;
-  height: 32px;
+.results img {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
   display: block;
-  margin-top: 1px;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.2rem;
-  text-align: left;
-  align-items: flex-start;
 }
 
 .name {
   font-weight: 600;
-  color: #fff;
+  color: var(--text);
 }
 
 .symbol {
   color: #888;
   font-weight: 400;
-  margin-left: 4px;
-}
-
-.meta {
-  font-size: 0.75rem;
-  color: #aaa;
+  font-size: 0.9rem;
 }

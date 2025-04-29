@@ -14,7 +14,6 @@ function Watchlist() {
   const [coins, setCoins] = useState([]);
   const [message, setMessage] = useState("");
 
-  // Fetch coin market data
   useEffect(() => {
     if (watchlist.length === 0) {
       setCoins([]);
@@ -24,17 +23,14 @@ function Watchlist() {
     fetchCoinData(watchlist.join(",")).then(setCoins);
   }, [watchlist]);
 
-  // Sync watchlist with localStorage
   useEffect(() => {
     localStorage.setItem("watchlist", JSON.stringify(watchlist));
   }, [watchlist]);
 
-  // Handle removing a coin from the watchlist
   const handleRemove = (id) => {
     setWatchlist((prev) => prev.filter((coinId) => coinId !== id));
   };
 
-  // Handle adding a coin from SearchBar
   const handleAdd = (coinId) => {
     if (watchlist.includes(coinId)) {
       setMessage("⚠️ Already in watchlist");
@@ -51,7 +47,9 @@ function Watchlist() {
         <p>Track your favorite coins in style</p>
       </div>
 
-      <SearchBar onAdd={handleAdd} />
+      <div className={styles.searchWrapper}>
+        <SearchBar onAdd={handleAdd} />
+      </div>
 
       {message && <p className={styles.message}>{message}</p>}
 

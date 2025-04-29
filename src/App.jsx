@@ -1,32 +1,65 @@
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Watchlist from "./components/Watchlist";
 import CoinDetail from "./pages/CoinDetail";
-import "./App.css";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
   return (
-    <main className="main">
-      <Routes>
-        <Route path="/" element={<Watchlist />} />
-        <Route path="/coin/:id" element={<CoinDetail />} />
-      </Routes>
-    </main>
+    <>
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        style={{
+          position: "fixed",
+          top: "1rem",
+          right: "1rem",
+          zIndex: 999,
+          background: "none",
+          border: "1px solid #0ff",
+          padding: "0.5rem 1rem",
+          borderRadius: "8px",
+          color: "var(--text)",
+          cursor: "pointer",
+          fontSize: "0.9rem",
+          transition: "all 0.3s ease",
+        }}
+      >
+        {darkMode ? "☀ Light Mode" : "🌙 Dark Mode"}
+      </button>
+
+      <main className="main">
+        <Routes>
+          <Route path="/" element={<Watchlist />} />
+          <Route path="/coin/:id" element={<CoinDetail />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 
 export default App;
-// import { useState } from "react";
-// import "./App.css";
+
+// import { Routes, Route } from "react-router-dom";
 // import Watchlist from "./components/Watchlist";
+// import CoinDetail from "./pages/CoinDetail";
+// import "./App.css";
 
 // function App() {
 //   return (
-//     <div style={{ background: "#111", minHeight: "100vh", color: "white" }}>
-//       <h1 style={{ textAlign: "center", paddingTop: "2rem" }}>
-//         🪙 Crypto Watchlist
-//       </h1>
-//       <Watchlist />
-//     </div>
+//     <main className="main">
+//       <Routes>
+//         <Route path="/" element={<Watchlist />} />
+//         <Route path="/coin/:id" element={<CoinDetail />} />
+//       </Routes>
+//     </main>
 //   );
 // }
 

@@ -1,75 +1,47 @@
-/* .page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 3rem 1.5rem;
-} */
 .page {
-  width: 100%;
   padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
 }
 
 .hero {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.hero img {
-  width: 48px;
-  height: 48px;
-  filter: drop-shadow(0 0 8px #0ff);
+  margin-bottom: 2rem;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
+  font-size: 2rem;
+  color: var(--heading-color);
 }
 
 .hero p {
+  color: var(--subtext-color);
   font-size: 1rem;
-  color: #999;
-  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
 }
 
 .message {
-  color: #ffcc00;
-  font-style: italic;
   text-align: center;
-  animation: fadeIn 0.3s ease;
+  margin: 1rem 0;
+  color: orange;
+  font-weight: 500;
 }
 
 .coins {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 2rem;
-  width: 100%;
-  justify-items: center;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .empty {
-  color: #666;
-  font-style: italic;
   text-align: center;
+  color: var(--subtext-color);
+  margin-top: 2rem;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.searchWrapper {
+  margin-bottom: 2rem;
 }

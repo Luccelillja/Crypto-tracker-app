@@ -1,3 +1,40 @@
+:root {
+  --bg: linear-gradient(to bottom, #ffffff, #e8e8e8);
+  --text: #111111;
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-border: rgba(0, 0, 0, 0.05);
+  --star-color: rgba(0, 0, 0, 0.1);
+  --heading-color: #111;
+  --subtext-color: #555;
+  --card-title: #fff;
+}
+
+body.dark {
+  --bg: radial-gradient(ellipse at top, #0a0a0a 0%, #111 80%) fixed,
+    linear-gradient(to bottom, #0a0a0a, #111) fixed;
+  --text: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --star-color: rgba(255, 255, 255, 0.1);
+  --heading-color: #fff;
+  --subtext-color: #aaa;
+  --card-title: #fff;
+}
+
+/* Global base styles */
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Rajdhani", "Inter", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s ease, color 0.4s ease;
+  line-height: 1.5;
+  overscroll-behavior: none;
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -5,21 +42,7 @@
   box-sizing: border-box;
 }
 
-/* Base layout */
-html,
-body {
-  height: 100%;
-  overflow-x: hidden;
-  font-family: "Rajdhani", "Inter", "Segoe UI", sans-serif;
-  background: radial-gradient(ellipse at top, #0a0a0a 0%, #111 80%) fixed,
-    linear-gradient(to bottom, #0a0a0a, #111) fixed;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-  overscroll-behavior: none;
-}
-
-/* Root container */
+/* Root app container */
 #root {
   min-height: 100vh;
   display: flex;
@@ -28,7 +51,7 @@ body {
   z-index: 1;
 }
 
-/* Stars background layer */
+/* Star background */
 .stars {
   position: fixed;
   top: 0;
@@ -36,12 +59,18 @@ body {
   width: 200%;
   height: 200%;
   background: transparent
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='10' cy='10' r='0.5' fill='white'/%3E%3Ccircle cx='50' cy='50' r='0.5' fill='white'/%3E%3Ccircle cx='70' cy='80' r='0.5' fill='white'/%3E%3Ccircle cx='90' cy='20' r='0.5' fill='white'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='10' cy='10' r='0.5' fill='%23ffffff'/%3E%3Ccircle cx='50' cy='50' r='0.5' fill='%23ffffff'/%3E%3Ccircle cx='70' cy='80' r='0.5' fill='%23ffffff'/%3E%3Ccircle cx='90' cy='20' r='0.5' fill='%23ffffff'/%3E%3C/svg%3E")
     repeat;
-  opacity: 0.8;
+  opacity: 0.5;
   animation: starFloat 120s linear infinite;
   z-index: 0;
   pointer-events: none;
+}
+
+body:not(.dark) .stars {
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='10' cy='10' r='0.5' fill='%23000000'/%3E%3Ccircle cx='50' cy='50' r='0.5' fill='%23000000'/%3E%3Ccircle cx='70' cy='80' r='0.5' fill='%23000000'/%3E%3Ccircle cx='90' cy='20' r='0.5' fill='%23000000'/%3E%3C/svg%3E")
+    repeat;
 }
 
 @keyframes starFloat {
@@ -53,7 +82,7 @@ body {
   }
 }
 
-/* Typography & utilities */
+/* Typography */
 a {
   color: inherit;
   text-decoration: none;
@@ -76,105 +105,32 @@ button {
   cursor: pointer;
 }
 
-/* Scrollbar styling */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
   background-color: #333;
   border-radius: 10px;
   border: 2px solid #111;
 }
 
-/* Reset * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Hero section (heading + subtext) */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background: radial-gradient(ellipse at top, #0a0a0a 0%, #111 80%) fixed,
-    linear-gradient(to bottom, #0a0a0a, #111) fixed;
-  color: #fff;
-  font-family: "Rajdhani", "Inter", "Segoe UI", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+.hero h1 {
+  font-size: 2rem;
+  color: var(--heading-color);
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: transparent;
-  z-index: 1;
-  position: relative;
+.hero p {
+  color: var(--subtext-color);
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
-
-.stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: transparent
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='10' cy='10' r='0.5' fill='white'/%3E%3Ccircle cx='50' cy='50' r='0.5' fill='white'/%3E%3Ccircle cx='70' cy='80' r='0.5' fill='white'/%3E%3Ccircle cx='90' cy='20' r='0.5' fill='white'/%3E%3C/svg%3E")
-    repeat;
-  opacity: 0.8;
-  animation: starFloat 120s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-}
-
-@keyframes starFloat {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(-50%, -50%);
-  }
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-button {
-  font-family: inherit;
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #333;
-  border-radius: 8px;
-  border: 2px solid #111;
-} */
