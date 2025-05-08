@@ -47,9 +47,10 @@ function CoinCard({ coin, onRemove }) {
 
           {coin.sparkline_in_7d?.price && (
             <div className={styles.sparkline}>
+              <p className={styles.chartLabel}>7d price trend</p>
               <LineChart
                 width={200}
-                height={80}
+                height={350}
                 data={coin.sparkline_in_7d.price.map((value, index) => ({
                   index,
                   value,
@@ -63,7 +64,6 @@ function CoinCard({ coin, onRemove }) {
                   dot={false}
                 />
               </LineChart>
-              <p className={styles.chartLabel}>7d price trend</p>
             </div>
           )}
         </div>
